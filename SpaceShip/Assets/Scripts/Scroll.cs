@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    private float speed = 0.1f;
+    public float speed = 0.1f;
     private float scrollX;
     private MeshRenderer meshRenderer;
 

@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 5.0f;
     public System.Action destroyed;
+    public Vector3 direcao;
 
     public void OnTriggerEnter2D(Collider2D col){
         if(destroyed != null)
@@ -13,22 +14,9 @@ public class Bullet : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void Move()
-    {
-        Vector3 temp = transform.position;
-        temp.x += speed * Time.deltaTime;
-        transform.position = temp;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        Move();
+        transform.position += direcao * speed * Time.deltaTime;
     }
 }

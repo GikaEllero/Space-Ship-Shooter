@@ -31,6 +31,17 @@ public class Ship : MonoBehaviour
         }
     }
 
+    public void ResetPlayer(){
+    	transform.position = new Vector2(-5f, 0f);
+    }
+
+    public void OnTriggerEnter2D(Collider2D col){
+        if(col.gameObject.layer == LayerMask.NameToLayer("Enemy") ||
+            col.gameObject.layer == LayerMask.NameToLayer("EnemyBullet")){
+            GameManager.SetVidas();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
